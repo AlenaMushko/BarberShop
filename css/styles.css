@@ -37,6 +37,8 @@ address {
 
 img {
   display: block;
+  min-width: 100%;
+  height: auto;
 }
 
 /*------------------- collective*/
@@ -90,8 +92,6 @@ img {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-
-  outline: 2px solid fuchsia;
 }
 
 .section {
@@ -110,29 +110,18 @@ img {
 .main-nav {
   display: flex;
   align-items: center;
-  
 }
 
 .header-list {
   display: flex;
   column-gap: 30px;
 }
-/*
-.header-list .header-item + .header-item{
-  margin-left: 30px;
-  display: block;
-  padding-top: 52px;
-  padding-bottom: 52px;
-}
 
-.header-list .header-item:first-child {
-  display: flex;
-  align-items: center;
-  justify-content: center
-}
-*/
 .header-item,
 .header-tel {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
   color: var(--title-color);
   font-size: 12px;
   line-height: 1.33;
@@ -182,28 +171,34 @@ img {
 .after-nav-list {
   display: flex;
   margin-left: auto;
-
+  align-items: center;
 }
 
-.after-nav-list .after-nav+.after-nav{
+.after-nav-list .after-nav + .after-nav {
   margin-left: 45px;
 }
 
 .after-nav-list .after-nav:first-child {
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
 
-.hero-logo{
+/*---------------------hero соц мережі*/
+
+.hero-logo {
   margin-right: 100px;
 }
-/*---------------------hero соц мережі*/
+
 .hero-content {
   padding: 272px 100px 206px 100px;
-
+  flex-grow: 1;
 
   background-color: #4e4f4a;
+}
+
+.hero-list {
+  width: 100px;
 }
 
 .hero-link {
@@ -218,13 +213,10 @@ img {
   color: var(--accent-color);
 }
 
-.hero .container{
+.hero .container {
   display: flex;
 }
 
-.header-list{
-  width: 100px;
-}
 /*---------------------hero*/
 
 .hero-pre-title {
@@ -251,7 +243,7 @@ img {
 
 /* -----------------------about*/
 
-.about-list{
+.about-list {
   display: flex;
   column-gap: 30px;
 }
@@ -276,12 +268,20 @@ img {
 
 .about-text {
   margin-bottom: 40px;
-  width: 500px;
 
   font-weight: 400;
   font-size: 14px;
   line-height: 1.86;
   letter-spacing: 0.02em;
+}
+
+.about .container {
+  display: flex;
+  column-gap: 30px;
+}
+
+.about-content {
+  max-width: 470px;
 }
 
 /* ---------------------prices*/
@@ -319,12 +319,17 @@ img {
 
 .prices-list {
   padding: 30px 40px;
+  width: calc((100% - 15px) / 2);
+  margin-right: -15px;
+  margin-left: -15px;
 
   border: 1px solid rgb(80, 150, 255);
 }
 
 .prices-item {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .prices-item:last-child {
@@ -335,6 +340,11 @@ img {
   display: block;
   margin: 0 auto;
   margin-top: 62px;
+}
+
+.prices-wrap {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* ---------------------benefit*/
@@ -349,7 +359,7 @@ img {
 .benefit-item {
   padding: 20px 24px;
 
-  border: 1px solid forestgreen;
+  background-color: #f7f7f7;
   width: 170px;
   height: 133px;
 }
@@ -390,6 +400,36 @@ img {
   width: 500px;
 }
 
+.benefit-wrap {
+  width: 500px;
+  margin-top: 130px;
+  margin-right: 70px;
+  margin-bottom: 230px;
+}
+
+.benefit .container {
+  display: flex;
+}
+
+.benefit-box {
+  width: 370px;
+  margin: 120px 100px;
+}
+
+.benefit-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.benefit-second {
+  margin-top: 35px;
+  margin-left: 30px;
+}
+
+.benefit-list .top {
+  margin-bottom: 30px;
+}
+
 /* -------------------------barbers*/
 
 .barbers {
@@ -397,13 +437,12 @@ img {
   background-color: gray;
 }
 
-.barbers-list{
+.barbers-list {
   display: flex;
-  
 }
 
-.barbers-list .barbers-item + .barbers-item{
-margin-left: 30px;
+.barbers-list .barbers-item + .barbers-item {
+  margin-left: 30px;
 }
 
 .barbers-pre-title {
@@ -414,10 +453,10 @@ margin-left: 30px;
   margin-bottom: 44px;
 
   font-family: 'Raleway';
-    font-weight: 700;
-    font-size: 42px;
-    line-height: 1.17;
-    letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
 }
 
 .barbers-text {
@@ -446,11 +485,11 @@ margin-left: 30px;
   color: var(--second-titlr-color);
 }
 
-.gallery-list{
+.gallery-list {
   display: flex;
 }
 
-.gallery-list .gallery-item + .gallery-item{
+.gallery-list .gallery-item + .gallery-item {
   margin-left: 30px;
 }
 
@@ -538,7 +577,8 @@ margin-left: 30px;
   padding-bottom: 56px;
 }
 
-.footer-unicode {}
+.footer-unicode {
+}
 
 a[href='#'] {
   margin-bottom: 40px;
