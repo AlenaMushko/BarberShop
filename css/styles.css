@@ -48,6 +48,16 @@ img {
   line-height: 1.36;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pre-title::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: currentColor;
 }
 
 .title {
@@ -193,12 +203,9 @@ img {
 .hero-content {
   padding: 272px 100px 206px 100px;
   flex-grow: 1;
- 
-  background-image: linear-gradient(
-    rgba(25, 28, 38, 0.2),
-    rgba(25, 38, 27, 0.2)
-  ),
-  url(../images/hero.jpg);
+
+  background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 38, 27, 0.2)),
+    url(../images/hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -263,8 +270,6 @@ img {
   color: var(--second-titlr-color);
 }
 
-
-
 .about-tytle {
   margin-bottom: 20px;
   width: 500px;
@@ -297,32 +302,23 @@ img {
 
 /*---------------------prices*/
 
-
-
 .prices {
   color: var(--list-color);
-  
+
   background-image: url(../images/img.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   min-width: 1600px;
-  background-color: #171A24;
+  background-color: #171a24;
 }
 
-.prices-list:nth-child(1){
-  background-image: linear-gradient(
-    180deg, 
-    #171A24 0%,
-     rgba(23, 26, 36, 0.2) 100%);
-
+.prices-list:nth-child(1) {
+  background-image: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
 }
 
-.prices-list:nth-child(2){
-  background-image: linear-gradient(
-    180deg, 
-    #090B13 0%, 
-    rgba(9, 11, 19, 0.2) 100%);
+.prices-list:nth-child(2) {
+  background-image: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
 }
 
 .prices-pre-title {
@@ -349,6 +345,7 @@ img {
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
+  order: 1;
 }
 
 .prices-list {
@@ -362,6 +359,17 @@ img {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.prices-item::after {
+  content: '';
+  width: 121px;
+  height: 1px;
+  background-color: rgba(157, 164, 189, 0.12);
+  flex-grow: 1;
 }
 
 .prices-item:last-child {
@@ -397,13 +405,49 @@ img {
 }
 
 .benefit-nunber {
+  display: flex;
+  align-items: center;
+}
+
+.benefit-nunber span {
   letter-spacing: 0.05em;
   margin-bottom: 6px;
-
+  margin-right: 3px;
   font-weight: 700;
   font-size: 42px;
   line-height: 1.36;
   text-align: center;
+  display: inline-block;
+}
+
+.benefit-power {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: center;
+  color: var(--accent-color);
+  display: inline-block;
+}
+
+.benefit-list {
+  display: flex;
+  width: 370px;
+  flex-wrap: wrap;
+}
+
+.benefit-item:nth-child(2n) {
+  margin-top: 30px;
+}
+
+.benefit-item:nth-child(2n + 1) {
+  margin-right: 30px;
+}
+
+.benefit-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(50% - 15px);
 }
 
 .benefit-text {
@@ -411,10 +455,6 @@ img {
   line-height: 1.36;
   text-align: center;
   letter-spacing: 0.02em;
-}
-
-.benefit-power {
-  color: var(--accent-color);
 }
 
 .benefit-pre-title {
@@ -434,34 +474,13 @@ img {
 
 .benefit-wrap {
   width: 500px;
-  margin-top: 130px;
-  margin-right: 70px;
-  margin-bottom: 230px;
+  margin-top: 9px;
 }
 
 .benefit .container {
   display: flex;
+  gap: 30px;
 }
-
-.benefit-box {
-  width: 370px;
-  margin: 120px 100px;
-}
-
-.benefit-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.benefit-second {
-  margin-top: 35px;
-  margin-left: 30px;
-}
-
-.benefit-list .top {
-  margin-bottom: 30px;
-}
-
 
 /* -------------------------barbers*/
 
@@ -513,32 +532,32 @@ img {
   text-align: center;
 }
 
-.barbers-social{
+.barbers-social {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-
-.barbers-social-link{
+.barbers-social-link {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background-color: #fff;
   display: flex;
   justify-content: center;
-align-items: center;
+  align-items: center;
 }
 
 .barbers-social-link:hover,
-.barbers-social-link:focus{
+.barbers-social-link:focus {
   background-color: rgb(180, 215, 248);
-} 
+}
 
 .barbers-social-link:hover .barbers-social-icon,
-.barbers-social-link:focus .barbers-social-icon{
-fill: #FF6C00;
+.barbers-social-link:focus .barbers-social-icon {
+  fill: #ff6c00;
 }
+
 /*--------------------------gallery*/
 
 .gallery {
@@ -559,12 +578,44 @@ fill: #FF6C00;
 
 
 
-/*-------------------------------booking*/
+/*-------------------booking----contacts*/
 
-.booking {
-  background-color: #4e4f4a;
+.contact-wrap .container{
+display: flex;
+background-image: url(../images/contacts_bg.png);
+background-repeat: no-repeat;
+background-size: calc(50% - 15px) 100%;
+background-position:  right;
+margin: 0 auto;
 }
 
+.contact-wrap{
+  background-color: #4e4f4a;
+  min-width: 1600px;
+}
+
+
+.booking{
+  padding-top: 130px;
+  padding-bottom: 183px;
+  width: calc(50% - 15px);
+  margin-right: 30px;
+}
+
+.contacts{
+  padding-top: 130px;
+  padding-bottom: 120px;
+  width: calc(50% - 15px);
+ padding-left: 100px;
+
+}
+
+.contacts-title {
+  margin-bottom: 40px;
+
+  color: var(--title-color);
+  font-family: 'Raleway', sans-serif;
+}
 .booking-title {
   color: var(--title-color);
   font-family: 'Raleway', sans-serif;
@@ -574,19 +625,6 @@ fill: #FF6C00;
   letter-spacing: 0.05em;
 }
 
-/*-------------------------------contacts*/
-
-.contacts {
- 
-  background-color: #4e4f4a;
-}
-
-.contacts-title {
-  margin-bottom: 40px;
-
-  color: var(--title-color);
-  font-family: 'Raleway', sans-serif;
-}
 
 .contacts-address {
   color: var(--list-color);
@@ -594,6 +632,10 @@ fill: #FF6C00;
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
+
+  fill: currentColor;
+  display: flex;
+  gap: 20px;
 }
 
 .contacts-link,
@@ -603,18 +645,18 @@ fill: #FF6C00;
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
+
+  fill: currentColor;
+  display: flex;
+    gap: 20px;
 }
 
-.contacts-item-address {
-  margin-bottom: 20px;
-}
-
-.contacts-item-tel {
-  margin-bottom: 20px;
-}
-
-.contacts-item-mail {
+.contacts-list{
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 70px;
+  justify-content: center;
 }
 
 .contacts-subtitle {
@@ -625,6 +667,16 @@ fill: #FF6C00;
   line-height: 1.36;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.contacts-subtitle::before{
+  content: " ";
+  width: 60px;
+  height: 1px;
+  background-color: rgba(157, 164, 189, 0.4);
 }
 
 .contacts-text {
@@ -634,7 +686,7 @@ fill: #FF6C00;
   line-height: 1.67;
   letter-spacing: 0.02em;
 }
-
+/*-------------------------footer*/
 .footer {
   padding-top: 56px;
   padding-bottom: 56px;
